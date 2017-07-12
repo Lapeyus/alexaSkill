@@ -1,9 +1,9 @@
 // 1. Skill Code =======================================================================================================
 var Alexa = require('alexa-sdk');
 var https = require('http');
-var http_host = '186.177.153.239';
+var http_host = 'ip';
 var host_port = 8080;
-var auth = 'osmc:magdalena';
+var auth = 'user:password';
 
 var controls = {        
     back:'{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"parentdir"},"id":1}',
