@@ -42,6 +42,7 @@ var controls = {
     unmute:'{"jsonrpc":"2.0","method":"Application.SetMute","params":{"mute":false},"id":1}',
     up:'{"jsonrpc":"2.0","method":"Input.Up","id":1}',
     warning:'{"id":1,"jsonrpc":"2.0","method":"GUI.ShowNotification","params":{"title":"Alexa says:","message":"warning","image":"warning"}}',
+    webcam: '{"jsonrpc":"2.0","method":"Addons.ExecuteAddon","params":{"addonid":"plugin.video.uwc","params":["//?channel=None&amp;keyword&amp;mode=221&amp;name=%5bCOLOR%20hotpink%5dFeatured%5b%2fCOLOR%5d&amp;page&amp;section=None&amp;url=https%3a%2f%2fchaturbate.com%2f%3fpage%3d1&quot;,return"]},"id": 1}',
     whisper:'{"jsonrpc":"2.0","method":"Application.SetVolume","params":{"volume":25},"id":1}',
 }
 
