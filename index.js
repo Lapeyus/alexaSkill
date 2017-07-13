@@ -3,7 +3,7 @@ var Alexa = require('alexa-sdk');
 var https = require('http');
 var http_host = 'ip';
 var host_port = port;
-var auth = 'kodi-user:kodi-password';
+var auth = 'kodiUser:kodiPassword';
 var APP_ID = "APP_ID";
 
 var controls = {        
