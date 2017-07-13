@@ -1,0 +1,19 @@
+﻿AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: MirrorMirror
+Resources:
+  Mirror:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs6.10
+      CodeUri: .
+      Description: MirrorMirror
+      MemorySize: 128
+      Timeout: 7
+      Role: 'arn:aws:iam::871643062687:role/lambda_basic_execution'
+      Events:
+        AlexaSkillEvent:
+          Type: AlexaSkill
+      Tags:
+        'lambda-console:blueprint': alexa-skill-kit-sdk-factskill
