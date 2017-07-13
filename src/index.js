@@ -8,7 +8,6 @@ var APP_ID = "APP_ID";
 
 var controls = {        
     back:'{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"parentdir"},"id":1}',
-    cameras: '{"jsonrpc":"2.0","method":"Addons.ExecuteAddon","params":{"addonid":"plugin.video.uwc","params":["//?channel=None&amp;keyword&amp;mode=221&amp;name=%5bCOLOR%20hotpink%5dFeatured%5b%2fCOLOR%5d&amp;page&amp;section=None&amp;url=https%3a%2f%2fchaturbate.com%2f%3fpage%3d1&quot;,return"]},"id": 1}',
     channels: '{"jsonrpc":"2.0","method":"Addons.ExecuteAddon","params":{"addonid":"plugin.video.youtube","params":["/?subscriptions/list/&quot;,return"]},"id": 1}',
     ContextMenu:'{"jsonrpc":"2.0","method":"Input.ContextMenu","id":1}',
     down:'{"jsonrpc":"2.0","method":"Input.Down","id":1}',
@@ -18,12 +17,12 @@ var controls = {
     hi:'{"id":1,"jsonrpc":"2.0","method":"GUI.ShowNotification","params":{"title":"Alexa and kodi say:","message":"Hi there master","image":"info"}}',
     home:'{"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"home","id":1}',
     info:'{"jsonrpc":"2.0","method":"Input.Info","id":1}',
-    jump:'{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"pagedown"},"id":1}',
     left:'{"jsonrpc":"2.0","method":"Input.Left","id":1}',
     moviesearch: '{"jsonrpc":"2.0","method":"Addons.ExecuteAddon","params":{"addonid":"plugin.video.exodus","params":["/?action=movieSearch"]},"id": 1}',
     music: '{"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"music"},"id":1}',
     mute:'{"jsonrpc":"2.0","method":"Application.SetMute","params":{"mute":true},"id":1}',
     next:'{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"skipnext"},"id":1}',
+    jump:'{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"pagedown"},"id":1}',
     pageup:'{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"pageup"},"id":1}',
     pause:'{"jsonrpc":"2.0","method":"Player.PlayPause","params":{"playerid":1},"id":1}',
     play:'{"jsonrpc":"2.0","method":"Player.PlayPause","params":{"playerid":1},"id":1}',
@@ -39,18 +38,19 @@ var controls = {
     sorry:'{"id":1,"jsonrpc":"2.0","method":"GUI.ShowNotification","params":{"title":"Alexa says:","message":"Sorry I did not understand the command","image":"warning"}}',
     speak:'{"jsonrpc":"2.0","method":"Application.SetVolume","params":{"volume":50},"id":1}',
     stop:'{"jsonrpc":"2.0","method":"Player.Stop","params":{"playerid":1},"id":1}',
-    subtitle:'{"jsonrpc":"2.0","id":1,"method":"GUI.ActivateWindow","params":{"window":"subtitlesearch"},"id":1}',
     talk:'{"jsonrpc":"2.0","method":"Input.SendText","params":{"text":"home","done":true},"id":1}',
     tvSearch: '{"jsonrpc":"2.0","method":"Addons.ExecuteAddon","params":{"addonid":"plugin.video.exodus","params":["/?action=tvSearch"]},"id": 1}',
     unmute:'{"jsonrpc":"2.0","method":"Application.SetMute","params":{"mute":false},"id":1}',
     up:'{"jsonrpc":"2.0","method":"Input.Up","id":1}',
     warning:'{"id":1,"jsonrpc":"2.0","method":"GUI.ShowNotification","params":{"title":"Alexa says:","message":"warning","image":"warning"}}',
+    webcam: '{"jsonrpc":"2.0","method":"Addons.ExecuteAddon","params":{"addonid":"plugin.video.uwc","params":["//?channel=None&amp;keyword&amp;mode=221&amp;name=%5bCOLOR%20hotpink%5dFeatured%5b%2fCOLOR%5d&amp;page&amp;section=None&amp;url=https%3a%2f%2fchaturbate.com%2f%3fpage%3d1&quot;,return"]},"id": 1}',
     whisper:'{"jsonrpc":"2.0","method":"Application.SetVolume","params":{"volume":25},"id":1}',
 }
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
-    alexa.appId = APP_ID;
+    //alexa.appId = "amzn1.ask.skill.b9c02559-0ed8-4d1f-b680-6d32e0fb0844";
+    alexa.registerHandlers(handlers);
     alexa.execute();
 };
 
